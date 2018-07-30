@@ -58,11 +58,15 @@ class Deck {
       this.deck[rand_ind] = temp_val;
     }
   }
+  deal() {
+    let dealt_card = this.deck.shift();
+    this.dealt_cards.push(dealt_card);
+    return dealt_card;
+  }
 }
 
 deck = new Deck();
 
 deck.generate_deck();
-deck.print_deck();
 deck.shuffle();
-deck.print_deck();
+console.log(deck.deal());
