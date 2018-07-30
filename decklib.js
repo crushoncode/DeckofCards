@@ -63,6 +63,12 @@ class Deck {
     this.dealt_cards.push(dealt_card);
     return dealt_card;
   }
+  replace() {
+    this.deck.unshift(this.dealt_cards.shift());
+  }
+  clear_deck() {
+    this.deck = [];
+  }
 }
 
 deck = new Deck();
