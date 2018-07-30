@@ -45,9 +45,24 @@ class Deck {
       }
     }
   }
+  shuffle() {
+    let current_ind = this.deck.length,
+      temp_val,
+      rand_ind;
+
+    while (0 != current_ind) {
+      rand_ind = Math.floor(Math.random() * current_ind);
+      current_ind -= 1;
+      temp_val = this.deck[current_ind];
+      this.deck[current_ind] = this.deck[rand_ind];
+      this.deck[rand_ind] = temp_val;
+    }
+  }
 }
 
 deck = new Deck();
 
 deck.generate_deck();
+deck.print_deck();
+deck.shuffle();
 deck.print_deck();
